@@ -10,11 +10,14 @@
 body{
   display: flex;
     justify-content: space-around;
+    padding: 0;
+    margin: 0;
 }
     #container {
-      width: 400px;
-    height: 400px;
+      width: 500px;
+    height: 500px;
     margin-top: 80px;
+    position:absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,56 +26,66 @@ body{
 }
     
 
+
     #round {
       width: 60px;
-      height: 60px;
-
-      background-color: #fa236b;
-      margin-right: 180px;
-      animation-name: ball;
-      animation-duration: 900ms;
-      animation-timing-function: ease-out;
-      animation-iteration-count: infinite;
+    height: 60px;
+    border-radius: 50%;
+    top: 100px;
+    background-color: #fa236b;
+    position: relative;
+    animation-name: ball;
+    animation-duration: 900ms;
+    animation-iteration-count: infinite;
 
     }
 
     .shape {
-      width: 60px;
+      width: 78px;
+      position: relative;
+    border-radius: 50%;
       margin: auto;
       height: 2px;
-      background: #000;
-      filter: blur(9px);
-      margin-top: 305px;
+      background:#000;
+      filter: blur(8.5px);
+      margin-top: 362px;
       align-self: center;
+      animation-name: shapeAnimation;
+    animation-duration: 900ms;
+    animation-iteration-count: infinite;
     }
 
     @keyframes ball {
-      0% {
-        transform: translate(150%, 90%);
-        border-radius: 50%;
-
-      }
-      50% {
-        transform: translate(120%, 448%);
-    border-radius: 50%;
-    
-
-      }
-      99%{
-        transform: translate(103%, 495%);
-    border-radius: 50%;
-    width: 83px;
+      10% {
+    width: 60px;
     height: 60px;
 }
-      
-      100% {
-        transform: translate(150%, 90%);
-        border-radius: 50%;
-       
-      }
-
+30% {
+   
+    width: 50px;
+    height: 60px;
+}
+50% {
+    transform: translateY( 495%);
+    width: 67px;
+    height: 45px;
+}
+75% {
+    
+    width: 67px;
+    height: 60px;
+}
+100% {
+    transform: translateY(0);
+   
+}
     }
     
+    @keyframes shapeAnimation{
+      50%{
+        transform: scale(0.5);
+      }
+    }
   </style>
   <title>Document</title>
 </head>
@@ -81,7 +94,10 @@ body{
 
 
   <div id="container">
-    <div id="round">
+    <div id="container2">
+      <div id="round"></div>
+    </div-container>
+    
     </div>
     <div class="shape"></div>
   </div>
